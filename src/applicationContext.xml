@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
+       xmlns:context="http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+       xmlns:lang="http://www.springframework.org/schema/lang/spring-lang-2.5.xsd"
+       xmlns:util="http://www.springframework.org/schema/util/spring-util-2.5.xsd"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/aop/spring-aop-2.5.xsd http://www.springframework.org/schema/aop/spring-aop-2.5.xsd/spring-spring-aop-2.5.xsd-2.5.xsd
+          http://www.springframework.org/schema/context/spring-context-2.5.xsd http://www.springframework.org/schema/context/spring-context-2.5.xsd/spring-spring-context-2.5.xsd-2.5.xsd
+          http://www.springframework.org/schema/lang/spring-lang-2.5.xsd http://www.springframework.org/schema/lang/spring-lang-2.5.xsd/spring-spring-lang-2.5.xsd-2.5.xsd
+          http://www.springframework.org/schema/util/spring-util-2.5.xsd http://www.springframework.org/schema/util/spring-util-2.5.xsd/spring-spring-util-2.5.xsd-2.5.xsd
+">
+<bean id="tipService" class="lab2.TipService" scope="prototype"> 
+        <constructor-arg ref="calc1" />
+    </bean>
+    
+    
+    <bean id="calc1" class="lab2.BaggageServiceTipCalculator" scope="prototype"> 
+        <constructor-arg value="GOOD" />
+        <constructor-arg value="5" />
+    </bean>
+    
+    
+    <bean id="calc2" class="lab2.FoodServiceTipCalculator" scope="prototype"> 
+        <constructor-arg value="FAIR" />
+        <constructor-arg value="22.5" />
+    </bean>
+</beans>
